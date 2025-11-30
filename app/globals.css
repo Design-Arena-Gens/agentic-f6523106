@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --neon-cyan: #00ffff;
+  --neon-purple: #b026ff;
+  --neon-blue: #0080ff;
+  --glass-bg: rgba(15, 15, 25, 0.7);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #000000;
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+.glass {
+  background: rgba(15, 15, 25, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(176, 38, 255, 0.5);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(0, 128, 255, 0.5);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 10px rgba(176, 38, 255, 0.8);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(0, 255, 255, 0.8); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
